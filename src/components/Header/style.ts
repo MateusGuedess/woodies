@@ -24,6 +24,7 @@ export const HeaderContainer = styled.div`
         margin-left: 8px;
       }
     }
+
     .header__menu {
       display: flex;
       align-items: center;
@@ -38,6 +39,11 @@ export const HeaderContainer = styled.div`
         font-size: 16px;
         line-height: 22px;
         color: rgba(34, 34, 34, 0.75);
+
+        &.selected {
+          font-weight: 800;
+          color: #daa520;
+        }
       }
 
       button {

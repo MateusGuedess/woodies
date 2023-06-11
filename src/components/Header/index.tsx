@@ -1,5 +1,5 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import React from "react";
 import { Nunito } from "next/font/google";
 import { HeaderContainer } from "./style";
@@ -11,7 +11,32 @@ const nunito = Nunito({
   weight: ["300", "700"],
 });
 
+const routes = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "About Us",
+    path: "/aboutus",
+  },
+  {
+    name: "How it works",
+    path: "/howitworks",
+  },
+  {
+    name: "Categories",
+    path: "/categories",
+  },
+  {
+    name: "Testimony",
+    path: "/testimony",
+  },
+];
+
 function Header() {
+  const pathName = usePathname();
+  console.log(pathName);
   return (
     <HeaderContainer>
       <div className="header">
@@ -20,11 +45,16 @@ function Header() {
           <p className={`${nunito.className} header__title`}>WOODIES</p>
         </div>
         <div className={`${nunito.className} header__menu`}>
-          <Link href="/">Home</Link>
-          <Link href="/">About Us</Link>
-          <Link href="/">How it works</Link>
-          <Link href="/">Categories</Link>
-          <Link href="/">Testimony</Link>
+          {routes.map((route, index) => (
+            <Link
+              className={`${route.path == pathName && "selected"}`}
+              key={index}
+              href={route.path}
+            >
+              {route.name}
+            </Link>
+          ))}
+
           <button>SIGN UP</button>
         </div>
       </div>
