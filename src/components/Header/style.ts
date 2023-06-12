@@ -8,7 +8,8 @@ export const HeaderContainer = styled.div`
   .header {
     display: flex;
     width: 1152px;
-    margin-top: 23px;
+    height: 80px;
+    align-items: center;
 
     .header__logo {
       display: flex;
