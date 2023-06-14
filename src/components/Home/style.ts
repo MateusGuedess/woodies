@@ -10,11 +10,12 @@ const move = keyframes`
   }
 `;
 
-export const HomeSection = styled.div`
+export const HomeSection = styled.section`
   width: 1152px;
   display: flex;
   justify-content: center;
   position: relative;
+  height: 100vh;
 
   .home__text {
     margin-top: 137px;
